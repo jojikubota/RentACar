@@ -1,0 +1,54 @@
+[
+{
+	"City": "San Jose",
+	"Available": 11	
+},
+{
+	"City": "Santa Clara",
+	"Available": 25	
+},
+{
+	"City": "Los Gatos",
+	"Available": 12	
+},
+{
+	"City": "Los Altos",
+	"Available": 9	
+},
+{
+	"City": "Sunnyvale",
+	"Available": 16
+},
+{
+	"City": "Milpitas",
+	"Available": 18	
+},
+{
+	"City": "Fremont",
+	"Available": 22	
+},
+{
+	"City": "Palo Alto",
+	"Available": 12	
+},
+{
+	"City": "Dublin",
+	"Available": 7
+},
+{
+	"City": "Pleasanton",
+	"Available": 19	
+},
+{
+	"City": "Belmont",
+	"Available": 12
+},
+{
+	"City": "Menlo Park",
+	"Available": 8	
+},
+{
+	"City": "San Mateo",
+	"Available": 14	
+}
+]

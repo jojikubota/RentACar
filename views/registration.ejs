@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+    	<title>Registration Page (CMPE 280)</title>
+    	<link rel="stylesheet"  href="css/style.css" />
+    	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="http://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
+        <script type="text/javascript" src="/angular/homepage.js"></script>
+    	<script type="text/javascript">
+    		
+    	</script>    	
+    </head>
+    <body>
+    	<h2> &nbsp
+    		<i class="fa fa-arrow-circle-right" style="font-size:36px;color:green"></i>
+    		Registration
+    	</h2>
+    	<hr>
+        <div class="label" id="mode" style="color:red"></div>
+    	<form method="POST" action="/register" onsubmit="return validate()">
+    		<div width="100%">
+    			<div class="label">User ID:<input type="text" name="userId" id="userId" required></div>
+    			<span style="display:inline">	    	
+    				<div style="border: 1px solid #888; box-shadow: 5px 5px 5px #888888;" id="password_rules">
+    					<progress class="progressClass" id="progress" value="0" max="8">weak</progress><br>
+    					<div style="background-color: rgba(0,0,0,0.4);font-weight:bold;width:100%;">
+    						&nbsp Password Strength &nbsp<br>
+    					</div>
+    					<i class="fa fa-check" style="color:green" id="upper-case"></i>1 upper-case letter<br>
+    					<i class="fa fa-check" style="color:green" id="lower-case"></i>1 lower-case letter<br>
+    					<i class="fa fa-check" style="color:green" id="hasNumber"></i>1 number<br>
+    					<i class="fa fa-check" style="color:green" id="pwd_length"></i>8 or more characters<br>
+    					<i class="fa fa-check" style="color:green" id="check_char"></i>Uses only these English Characer: A-z, 0-9, @, -, _ and .<br>
+    					<i class="fa fa-check" style="color:green" id="check_userid"></i>Password cannot be same as User ID<br>
+    				</div>					
+	    		</span>
+    		</div>
+    		<div width="60%" >
+    			<div class="label">Password:
+    				<input type="password" name="password" id="password" required 
+	    				onkeyup="checkStrength()" onfocus="passwordSelected()"
+	    				onblur="passwordUnSelected()">
+	    		</div>	    	
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">Verify Password:
+    				<input type="password" name="verifyPassword" id="verifyPassword" required >
+    			</div>
+    		</div>
+    		<div width="60%">
+    			<div class="label">Email Address
+    				<input type="email" name="email" id="email" required></div>
+    		</div>
+    		<div width="60%">
+    			<div class="label">Verify Email Address
+    				<input type="email" name="verifyEmail" id="verifyEmail" required></div>
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">Security Question
+    				<input list="question1" id="question_1" name="question_1" required>
+						<datalist id="question1" name="question1" >
+							<option value="Sum of 2 + 3 = "></option>
+							<option value="Sum of 100 + 200 = "></option>
+							<option value="23 X 100 = "></option>
+							<option value="Capital of India?"></option>
+							<option value="Capital of China?"></option>
+						</datalist>
+    			</div>
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">Security Answer
+    				<input type="text" name="answer1" id="answer1" required>
+    			</div>
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">Security Question
+    				<input list="question2" id="question_2" name="question_2" required>
+						<datalist id="question2" name="question2" >
+							<option value="Sum of 2 + 3 = "></option>
+							<option value="Sum of 100 + 200 = "></option>
+							<option value="23 X 100 = "></option>
+							<option value="Capital of India?"></option>
+							<option value="Capital of China?"></option>
+						</datalist>
+    			</div>
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">Security Answer
+    				<input type="text" name="answer2" id="answer2" required>
+    			</div>
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">Mobile
+    				<input type="tel" name="mobile" id="mobile" required pattern="\d{3}[\-]?\d{3}[\-]?\d{4}">
+    			</div>
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">Address
+    				<!-- <input type="textarea" name="address" required> -->
+    				<textarea type="text" name="address" id="address" ></textarea>
+    			</div>
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">Areas you might be interested in
+    				<textarea type="text" rows="4" id="interest" name="interest" ></textarea>
+    			</div>
+    		</div>
+
+            <div width="100%">
+                <div class="label">CAPTCHA: Please drop image of San Jose Library Building below:<br>
+                <div id="sourceimg" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+                </div>                
+            </div>
+            <div width="60%">
+                <img draggable="true" id="spartan" src="spartan.png" width="150px" height="150px" ondragstart="drag(event)"></img>
+                <img draggable="true" id="cmpe" src="cmpe.png" width="150px" height="150px" ondragstart="drag(event)"></img>
+                <img draggable="true" id="library" src="library.png" width="150px" height="150px" ondragstart="drag(event)"></img>
+                
+                <br>
+            </div>
+
+    		<div width="60%">
+    			<div id="errorMsg" class="label" style="color:red"></div>
+    		</div>
+
+    		<div width="60%">
+    			<div class="label">
+    				<input id="submit" type="submit" value="Register" disabled>
+	    			<input type="reset" value="Cancel">
+    			</div>
+    		</div>
+	    	
+    	</form>
+    </body>
+</html>

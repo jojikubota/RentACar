@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CME280: Rent A Car</title>
+        
+        <meta name="description" content="Rent a car after having a Virtual view of car interior. This is web UI project done for cmpe280.">
+        <meta name="keywords" content="cmpe280, cmpe 280, web ui, sjsu, virtual, virtual reality, webvr, web vr, vr, vr web, car, cars, rent a car, car interior, virtual car interior">
+        <meta name="author" content="Nikhil, Sneha, Joji, Reshma, Shubhra">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/default-layout.css">
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>        
+    <script type="text/javascript" src="js/angular/homepage.js"></script>
+    
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="pie-chart.js"></script>
+    <script src="bar-chart.js"></script>
+    <script src="line-chart.js"></script>
+
+    <script src="js/w3DisplayData.js"></script>
+    </head>
+    <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        
+    }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+    <body  ng-app="index" ng-controller="indexController" ng-init="carsData=<%= data %>;">
+    <header role="banner" id="fh5co-header">
+        
+        <div class="fluid-container">
+            <div id="google_translate_element"></div>
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <a class="navbar-brand" href="index.html">CMPE 280</a> 
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+                        <li><a href="#" data-nav-section="about"><span>About</span></a></li>
+                        <li><a href="#services" data-nav-section="services"><span>Services</span></a></li>
+                        <li><a href="#testimony" data-nav-section="testimony"><span>Statistics</span></a></li>
+                        <li><a href="index.html#" data-nav-section="pricing"><span>Pricing</span></a></li>
+                        <li><a href="index.html#" data-nav-section="team"><span>Team</span></a></li>
+                        <li><a href="index.html#" data-nav-section="blog"><span>Contact Us</span></a></li>
+                    
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="fh5co-home" data-section="home" style="background-image: url(images/uuu.jpg);" data-stellar-background-ratio="0.5">
+        <div class="gradient"></div>
+
+        <div class="container">
+            <div class="text-wrap">
+                <div class="text-inner">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <h1 class="to-animate">Car Renting made easy</h1>
+                            <h2 class="to-animate"><span>Get a feel of the car before renting</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fh5co-services" data-section="about">
+        <div ng-include="'about.html'"></div>
+    </section>
+
+    <section id="fh5co-explore" data-section="services">
+        <div ng-include="'services.html'"></div>
+    </section>
+    <section id="fh5co-testimony" class="fh5co-bg-color" data-section="testimony">
+         <div ng-include="'stats.html'"></div>
+    </section>
+    
+    <section id="fh5co-pricing" data-section="pricing">
+        <div ng-include="'pricing.html'"></div>
+    </section>  
+
+    <section id="fh5co-team" class="fh5co-bg-color" data-section="team">
+        <div ng-include="'team.html'"></div>
+    </section>
+
+    <section id="fh5co-blog" data-section="blog">
+        <div ng-include="'footer.html'"></div>
+    </section>
+
+
+    
+    <div id="map" class="fh5co-map"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+    <script src="js/google_map.js"></script>
+    <script src="js/main.js"></script>
+    </body>
+</html>
+

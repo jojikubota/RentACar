@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CME280: Rent A Car</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/w3DisplayData.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>		
+    <script type="text/javascript" src="js/angular/cardetails.js"></script>
+	</head>
+	<script>
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+		
+	}
+	</script>
+	<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+	<body ng-app="cardetails" ng-controller="cardetailsController" ng-init="onload();">
+	<header role="banner" id="fh5co-header">
+		<div class="fluid-container">
+			<div id="google_translate_element"></div>
+			<nav class="navbar navbar-default">
+				<div class="navbar-header">
+					
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+					<a class="navbar-brand" href="index.html">CMPE 280</a> 
+				</div>
+				
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#" data-nav-section="home"><span>Home</span></a></li>
+						<li><a href="#" data-nav-section="information"><span>Information</span></a></li>
+						<li><a href="#" data-nav-section="reserve"><span>Reserve</span></a></li>
+						<li><a class="external" href="index.html"><span>Statistics</span></a></li>
+						<li><a class="external" href="index.html" data-nav-section="pricing"><span>Pricing</span></a></li>
+						<li><a class="external" href="index.html" data-nav-section="team"><span>Team</span></a></li>
+						<li><a href="#" data-nav-section="contact"><span>Contact Us</span></a></li>
+					
+					</ul>
+				</div>
+			</nav>
+	  	</div>
+	</header>
+
+	<!-- main car image -->
+	<section id="fh5co-home" data-section="home" style="background-image: url(images/cars/{{car.image}}.jpg); background-repeat:no-repeat; background-size:cover;" data-stellar-background-ratio="0.5">
+		<!-- <a class="navbar-brand" href="renault-vr.html?polyfill=1"> -->
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<h1 class="to-animate">{{car.manufacturer}} <span>{{car.model}}</span></h1>
+							<h2 class="to-animate">{{car.tagline}}</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- </a> -->
+	</section>
+	<!-- end of main car image -->
+
+	<section id="fh5co-explore" data-section="information" name="information" >
+		<div class="fh5co-services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="to-animate"><span>{{car.name}}</span></h2>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 subtext">
+								<h3 class="to-animate">{{car.type}}</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<div class="box-services">
+							<div class="icon to-animate">
+								<span><i class="icon-info"></i></span>
+							</div>
+							<div class="fh5co-post to-animate">
+								<h3>Car Info</h3>
+								<p>Make: {{car.manufacturer}}</p>
+								<p>Model: {{car.model}}</p>
+								<p>Year: {{car.year}}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="box-services">
+							<div class="icon to-animate">
+								<span><i class="icon-dashboard"></i></span>
+							</div>
+							<div class="fh5co-post to-animate">
+								<h3>Mileage</h3>
+								<p>{{car.mileage}}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="box-services">
+							<div class="icon to-animate">
+								<span><i class="icon-people"></i></span>
+							</div>
+							<div class="fh5co-post to-animate">
+								<h3>Capacity</h3>
+								<p>{{car.capacity}}</p>
+								<p>2 Large Luggage / 3 Small Bags </p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="box-services">
+							<div class="icon to-animate">
+								<span><i class="icon-money"></i></span>
+							</div>
+							<div class="fh5co-post to-animate">
+								<h3>Price</h3>
+								<p>${{car.price.day}} / day</p>
+								<p>${{car.price.week}} / week</p>
+								<p>${{car.price.month}} / month</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- reserve -->
+	<section id="fh5co-explore" data-section="reserve" name="reserve">
+		<div class="form-group"  style="text-align:center;" >
+			<br>
+			<a target="_blank" href="https://book.carrentals.com/offers?account_id=3926903&channel=web">
+				<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Reserve">
+			</a>
+		</div>
+	</section>
+	<!-- end of reserve -->
+
+	<section id="fh5co-blog" data-section="contact">
+		<div ng-include="'footer.html'"></div>
+	</section>
+
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.countTo.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="js/google_map.js"></script>
+	<script src="js/main.js"></script>
+	</body>
+</html>
+
